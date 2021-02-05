@@ -2,11 +2,14 @@
 @{
     Layout = null;
 }
-<table>
+<p>
+    @Html.ActionLink("Новый сотрудник", "CreateEmployee", "Employee")
+</p>
+<table class="table">
     @foreach (WebHospital.Models.Employee e in Model)
     {
         <tr>
-            <td>@e.FIOEmployee</td>
+            <td scope="row">@e.FIOEmployee</td>
         </tr>
     }
 </table>

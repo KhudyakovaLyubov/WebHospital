@@ -2,14 +2,17 @@
 @{
     Layout = null;
 }
-<table>
+<p>
+    @Html.ActionLink("Добавить специализацию", "CreateSpecialty", "Specialty")
+</p>
+<table class="table">
     @foreach (WebHospital.Models.Specialty e in Model)
     {
         <tr>
-            <td>@e.NameSpecialty</td>
+            <td scope="row">@e.NameSpecialty</td>
         </tr>
         <tr>
-            @Html.Action("GetEmployees", "Employee", new { id = e.IDSpecialty})
+            @Html.Action("GetEmployees", "Employee", new { id = e.IDSpecialty })
         </tr>
     }
 </table>

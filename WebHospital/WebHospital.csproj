@@ -128,10 +128,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DbControllers\AddressController.cs" />
     <Compile Include="Controllers\DbControllers\DepartmentController.cs" />
     <Compile Include="Controllers\DbControllers\EmployeeController.cs" />
-    <Compile Include="Controllers\DbControllers\PartController.cs" />
     <Compile Include="Controllers\DbControllers\PatientController.cs" />
     <Compile Include="Controllers\DbControllers\SpecialtyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -149,12 +147,15 @@
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Timetable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AddressViewModel.cs" />
+    <Compile Include="ViewModel\PartModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -189,12 +190,11 @@
     <Content Include="Views\Home\Parts.cshtml" />
     <Content Include="Views\Employee\GetEmployees.cshtml" />
     <Content Include="Views\Specialty\GetSpecialties.cshtml" />
+    <Content Include="Views\Specialty\CreateSpecialty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Address\" />
     <Folder Include="Views\Department\" />
-    <Folder Include="Views\Part\" />
     <Folder Include="Views\Patient\" />
   </ItemGroup>
   <ItemGroup>

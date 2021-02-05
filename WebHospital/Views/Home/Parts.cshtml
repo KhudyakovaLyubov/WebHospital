@@ -1,10 +1,26 @@
-﻿@model IEnumerable<WebHospital.Models.Part>
+﻿@using WebHospital.Models;
+@using WebHospital.ViewModel;
+
 <div class="row">
-    <table>
-        @foreach (var item in Model)
+    <form class="form-inline">
+        <label>Выберите участок:</label>
+        <select name="id" class="form-control">
+            @foreach (PartModel pm in Model.PartList)
+            {
+                <option value="@pm.Id">@pm.Name</option>
+            }
+        </select>
+        <input type="submit" value="Показать"/>
+    </form>
+    <br />
+    <p>
+        @Html.ActionLink("Добавить адрес", "CreateAddress", "Address")
+    </p>
+    <table class="table">
+        @foreach (Address a in Model.AddressList)
         {
             <tr>
-                <td>@item.NamePart</td>
+                <td>@a.NameAddress</td>
             </tr>
         }
     </table>

@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<WebHospital.Models.Employee>
 <div class="row">
     <h2>Врачи</h2>
+    <p>
+        @Html.ActionLink("Новый сотрудник", "CreateEmployee", "Employee")
+    </p>
     <table>
         @foreach (WebHospital.Models.Employee e in Model)
         {
