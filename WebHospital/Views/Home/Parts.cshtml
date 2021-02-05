@@ -1,0 +1,11 @@
+﻿@model IEnumerable<WebHospital.Models.Part>
+<div class="row">
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NamePart</td>
+            </tr>
+        }
+    </table>
+</div>

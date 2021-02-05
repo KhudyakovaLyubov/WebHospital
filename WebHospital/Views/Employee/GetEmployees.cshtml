@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebHospital.Models.Employee>
+@{
+    Layout = null;
+}
+<table>
+    @foreach (WebHospital.Models.Employee e in Model)
+    {
+        <tr>
+            <td>@e.FIOEmployee</td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebHospital.Models.Specialty>
+@{
+    Layout = null;
+}
+<table>
+    @foreach (WebHospital.Models.Specialty e in Model)
+    {
+        <tr>
+            <td>@e.NameSpecialty</td>
+        </tr>
+        <tr>
+            @Html.Action("GetEmployees", "Employee", new { id = e.IDSpecialty})
+        </tr>
+    }
+</table>
+

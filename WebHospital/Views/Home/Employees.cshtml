@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebHospital.Models.Employee>
+<div class="row">
+    <h2>Врачи</h2>
+    <table>
+        @foreach (WebHospital.Models.Employee e in Model)
+        {
+            <tr>
+                <td>@e.FIOEmployee</td>
+                <td>@e.Specialty1.NameSpecialty</td>
+            </tr>
+        }
+    </table>
+</div>

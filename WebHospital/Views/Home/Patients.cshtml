@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WebHospital.Models.Patient>
+<div class="row">
+    <table>
+        @foreach (WebHospital.Models.Patient p in Model)
+        {
+            <tr>
+                <td>@p.FIOPatient</td>
+                <td>@p.CardNumber</td>
+            </tr>
+        }
+    </table>
+</div>

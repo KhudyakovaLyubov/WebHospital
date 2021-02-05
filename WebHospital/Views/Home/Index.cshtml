@@ -1,0 +1,15 @@
+﻿@model IEnumerable<WebHospital.Models.Department>
+<div class="row">
+    <h2>Отделения</h2>
+    <table>
+        @foreach (WebHospital.Models.Department d in Model)
+        {
+            <tr>
+                <td>@d.NameDepartment</td>
+            </tr>
+            <tr>
+                @Html.Action("GetSpecialties", "Specialty", new { id = d.IDDepartment })
+            </tr>
+        }
+    </table>
+</div>
