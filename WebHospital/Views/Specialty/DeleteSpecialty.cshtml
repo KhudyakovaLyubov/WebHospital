@@ -1,0 +1,17 @@
+﻿@model WebHospital.Models.Specialty
+
+<h2>Удаление записи о специализации</h2>
+<dl>
+    <dt>Наименование специализации</dt>
+    <dd>
+        @Html.DisplayFor(model => model.NameSpecialty)
+    </dd>
+    <dt>Отделение</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Department1.NameDepartment)
+    </dd>
+</dl>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}

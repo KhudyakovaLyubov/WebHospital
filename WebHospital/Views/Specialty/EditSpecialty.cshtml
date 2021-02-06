@@ -1,0 +1,20 @@
+﻿@model WebHospital.Models.Specialty
+
+<h2>Изменение специализации</h2>
+@using (Html.BeginForm("EditSpecialty", "Specialty", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.IDSpecialty)
+        <p>
+            @Html.LabelFor(m => m.NameSpecialty, "Наименование специализации")
+            <br />
+            @Html.EditorFor(m => m.NameSpecialty)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Department, "Наименование отделения")
+            <br />
+            @Html.DropDownListFor(m => m.Department, ViewBag.departments as SelectList, new { @class = "form-control" })
+        </p>
+        <p><input type="submit" value="Сохранить" /></p>
+    </fieldset>
+}

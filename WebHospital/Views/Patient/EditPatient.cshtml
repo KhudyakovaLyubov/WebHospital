@@ -1,0 +1,35 @@
+﻿@model WebHospital.Models.Patient
+
+<h2>Изменение данных о пациенте</h2>
+@using (Html.BeginForm("EditPatient", "Patient", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.IDPatient)
+        <p>
+            @Html.LabelFor(m => m.FIOPatient, "ФИО пациента")
+            <br />
+            @Html.EditorFor(m => m.FIOPatient)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Policy, "Полис ОМС")
+            <br />
+            @Html.EditorFor(m => m.Policy)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.DateOfBirth, "Дата рождения")
+            <br />
+            @Html.EditorFor(m => m.DateOfBirth)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Address, "Адрес")
+            <br />
+            @Html.EditorFor(m => m.Address)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.CardNumber, "Номер карты")
+            <br />
+            @Html.EditorFor(m => m.CardNumber)
+        </p>
+        <p><input type="submit" value="Сохранить" /></p>
+    </fieldset>
+}

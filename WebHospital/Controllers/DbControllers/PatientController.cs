@@ -9,6 +9,17 @@ namespace WebHospital.Controllers.DbControllers
         HospitalDbContext context = new HospitalDbContext();
 
         [HttpGet]
+        public ActionResult DetailsPatient(int id)
+        {
+            var patient = context.Patient.Find(id);
+            if (patient != null)
+            {
+                return View(patient);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
         public ActionResult EditPatient(int? id) //Редактирование данных
         {
             if (id == null)
@@ -40,6 +51,31 @@ namespace WebHospital.Controllers.DbControllers
         public ActionResult CreatePatient(Patient patient) //Добавление записи в базу данных
         {
             context.Patient.Add(patient);
+            context.SaveChanges();
+            return RedirectToAction("Patients", "Home");
+        }
+
+
+        [HttpGet]
+        public ActionResult DeletePatient(int id) //Удаление данных
+        {
+            var patient = context.Patient.Find(id);
+            if (patient == null)
+            {
+                return HttpNotFound();
+            }
+            return View(patient);
+        }
+
+        [HttpPost, ActionName("DeletePatient")]
+        public ActionResult DeleteConfirmedPatient(int id) //Удаление записи из базы данных
+        {
+            var patient = context.Patient.Find(id);
+            if (patient == null)
+            {
+                return HttpNotFound();
+            }
+            context.Patient.Remove(patient);
             context.SaveChanges();
             return RedirectToAction("Patients", "Home");
         }

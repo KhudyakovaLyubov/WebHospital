@@ -131,6 +131,7 @@
     <Compile Include="Controllers\DbControllers\DepartmentController.cs" />
     <Compile Include="Controllers\DbControllers\EmployeeController.cs" />
     <Compile Include="Controllers\DbControllers\PatientController.cs" />
+    <Compile Include="Controllers\DbControllers\ReceptionController.cs" />
     <Compile Include="Controllers\DbControllers\SpecialtyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -147,8 +148,8 @@
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Timetable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\AddressViewModel.cs" />
-    <Compile Include="ViewModel\PartModel.cs" />
+    <Compile Include="ViewModel\SpecialtyViewModel.cs" />
+    <Compile Include="ViewModel\DepartmentModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -187,15 +188,29 @@
     <Content Include="Views\Home\Employees.cshtml" />
     <Content Include="Views\Home\Patients.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Parts.cshtml" />
     <Content Include="Views\Employee\GetEmployees.cshtml" />
     <Content Include="Views\Specialty\GetSpecialties.cshtml" />
     <Content Include="Views\Specialty\CreateSpecialty.cshtml" />
+    <Content Include="Views\Reception\CreateReception.cshtml" />
+    <Content Include="Views\Specialty\EditSpecialty.cshtml" />
+    <Content Include="Views\Reception\EditReception.cshtml" />
+    <Content Include="Views\Department\CreateDepartment.cshtml" />
+    <Content Include="Views\Department\EditDepartment.cshtml" />
+    <Content Include="Views\Employee\CreateEmployee.cshtml" />
+    <Content Include="Views\Employee\EditEmployee.cshtml" />
+    <Content Include="Views\Patient\CreatePatient.cshtml" />
+    <Content Include="Views\Patient\EditPatient.cshtml" />
+    <Content Include="Views\Employee\DetailsEmployee.cshtml" />
+    <Content Include="Views\Patient\DetailsPatient.cshtml" />
+    <Content Include="Views\Specialty\DeleteSpecialty.cshtml" />
+    <Content Include="Views\Patient\DeletePatient.cshtml" />
+    <Content Include="Views\Reception\DeleteReception.cshtml" />
+    <Content Include="Views\Department\DeleteDepartment.cshtml" />
+    <Content Include="Views\Employee\DeleteEmployee.cshtml" />
+    <Content Include="Views\Reception\GetReceptions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Department\" />
-    <Folder Include="Views\Patient\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,15 @@
+﻿@model WebHospital.Models.Department
+
+<h2>Изменение отделения</h2>
+@using (Html.BeginForm("EditDepartment", "Department", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.IDDepartment)
+        <p>
+            @Html.LabelFor(m => m.NameDepartment, "Наименование отделения")
+            <br />
+            @Html.EditorFor(m => m.NameDepartment)
+        </p>
+        <p><input type="submit" value="Сохранить" /></p>
+    </fieldset>
+}

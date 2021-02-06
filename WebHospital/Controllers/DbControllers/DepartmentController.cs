@@ -43,6 +43,30 @@ namespace WebHospital.Controllers.DbControllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet]
+        public ActionResult DeleteDepartment(int id) //Удаление данных
+        {
+            var department = context.Department.Find(id);
+            if (department == null)
+            {
+                return HttpNotFound();
+            }
+            return View(department);
+        }
+
+        [HttpPost, ActionName("DeleteDepartment")]
+        public ActionResult DeleteConfirmedDepartment(int id) //Удаление записи из базы данных
+        {
+            var department = context.Department.Find(id);
+            if (department == null)
+            {
+                return HttpNotFound();
+            }
+            context.Department.Remove(department);
+            context.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
+
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных
         {
             context.Dispose();

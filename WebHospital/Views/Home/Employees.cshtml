@@ -4,13 +4,20 @@
     <p>
         @Html.ActionLink("Новый сотрудник", "CreateEmployee", "Employee")
     </p>
-    <table>
+    <table class="table">
+        <tr>
+            <td>ФИО</td>
+            <td>Специализация</td>
+        </tr>
         @foreach (WebHospital.Models.Employee e in Model)
         {
-            <tr>
-                <td>@e.FIOEmployee</td>
-                <td>@e.Specialty1.NameSpecialty</td>
-            </tr>
+        <tr>
+            <td>@e.FIOEmployee</td>
+            <td>@e.Specialty1.NameSpecialty</td>
+            <td>@Html.ActionLink("Детали", "DetailsEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
+            <td>@Html.ActionLink("Редактировать", "EditEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
+            <td>@Html.ActionLink("Удалить", "DeleteConfirmedEmployee", "Home", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
+        </tr>
         }
     </table>
 </div>

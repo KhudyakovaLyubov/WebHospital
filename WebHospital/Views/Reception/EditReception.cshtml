@@ -1,0 +1,20 @@
+﻿@model WebHospital.Models.Reception
+
+<h2>Изменение данных о записи на прием</h2>
+@using (Html.BeginForm("EditReception", "Reception", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.IDReception)
+        <p>
+            @Html.LabelFor(m => m.Employee, "Врач")
+            <br />
+            @Html.DropDownListFor(m => m.Employee, ViewBag.employees as SelectList, new { @class = "form-control" })
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Patient, "Пациент")
+            <br />
+            @Html.DropDownListFor(m => m.Patient, ViewBag.patients as SelectList, new { @class = "form-control" })
+        </p>
+        <p><input type="submit" value="Сохранить" /></p>
+    </fieldset>
+}

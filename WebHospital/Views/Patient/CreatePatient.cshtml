@@ -1,0 +1,32 @@
+﻿@model WebHospital.Models.Patient
+
+<h2>Новый пациент</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.FIOPatient, "ФИО пациента")
+    <br />
+    <br />
+    @Html.EditorFor(model => model.FIOPatient)
+    <br />
+    @Html.LabelFor(model => model.Policy, "Полис ОМС")
+    <br />
+    <br />
+    @Html.EditorFor(model => model.Policy)
+    <br />
+    @Html.LabelFor(model => model.DateOfBirth, "Дата рождения")
+    <br />
+    <br />
+    @Html.EditorFor(model => model.DateOfBirth)
+    <br />
+    @Html.LabelFor(model => model.Address, "Адрес")
+    <br />
+    <br />
+    @Html.EditorFor(model => model.Address)
+    <br />
+    @Html.LabelFor(model => model.CardNumber, "Номер медицинской карты")
+    <br />
+    <br />
+    @Html.EditorFor(model => model.CardNumber)
+    <br />
+    <input type="submit" value="Добавить" />
+}

@@ -1,0 +1,24 @@
+﻿@model WebHospital.Models.Reception
+@{
+    Layout = null;
+}
+<h2>Новый талон на прием</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Employee, "Врач")
+    <br />
+    @Html.DropDownListFor(model => model.Employee, ViewBag.employees as SelectList, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.LabelFor(model => model.Patient, "Пациент")
+    <br />
+    @Html.DropDownListFor(model => model.Patient, ViewBag.patients as SelectList, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.LabelFor(model => model.Datetime, "Дата и время")
+    <br />
+    @Html.EditorFor(model => model.Datetime)
+    <br />
+    <br />
+    <input type="submit" value="Добавить" />
+}

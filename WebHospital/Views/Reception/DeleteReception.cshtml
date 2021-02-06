@@ -1,0 +1,21 @@
+﻿@model WebHospital.Models.Reception
+
+<h2>Удаление записи о приеме</h2>
+<dl>
+    <dt>ФИО врача</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Employee1.FIOEmployee)
+    </dd>
+    <dt>ФИО пациента</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Patient1.FIOPatient)
+    </dd>
+    <dt>Дата и время приема</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Datetime)
+    </dd>
+</dl>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}

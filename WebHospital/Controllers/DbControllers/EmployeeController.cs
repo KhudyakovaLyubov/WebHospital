@@ -7,7 +7,18 @@ namespace WebHospital.Controllers.DbControllers
     public class EmployeeController : Controller //Работа с данными таблицы "Сотрудники"
     {
         HospitalDbContext context = new HospitalDbContext();
-        // GET: Employee
+
+        [HttpGet]
+        public ActionResult DetailsEmployee(int id)
+        {
+            var employee = context.Employee.Find(id);
+            if (employee != null)
+            {
+                return View(employee);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult GetEmployees(int? id)
         {
             var specialties = context.Specialty.Find(id);
@@ -48,6 +59,30 @@ namespace WebHospital.Controllers.DbControllers
         public ActionResult CreateEmployee(Employee employee) //Добавление записи в базу данных
         {
             context.Employee.Add(employee);
+            context.SaveChanges();
+            return RedirectToAction("Employees", "Home");
+        }
+
+        [HttpGet]
+        public ActionResult DeleteEmployee(int id) //Удаление данных
+        {
+            var employee = context.Employee.Find(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            return View(employee);
+        }
+
+        [HttpPost, ActionName("DeleteEmpoyee")]
+        public ActionResult DeleteConfirmedEmployee(int id) //Удаление записи из базы данных
+        {
+            var employee = context.Employee.Find(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            context.Employee.Remove(employee);
             context.SaveChanges();
             return RedirectToAction("Employees", "Home");
         }

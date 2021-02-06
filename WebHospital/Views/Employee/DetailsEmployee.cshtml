@@ -1,0 +1,17 @@
+﻿@model WebHospital.Models.Employee
+
+<h2>Информация о сотруднике</h2>
+<dl>
+    <dt>ФИО пациента</dt>
+    <dd>
+        @Html.DisplayFor(model => model.FIOEmployee)
+    </dd>
+    <dt>Специализация</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Specialty1.NameSpecialty)
+    </dd>
+    <dt>Кабинет</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Cabinet)
+    </dd>
+</dl>

@@ -1,12 +1,26 @@
 ﻿@model IEnumerable<WebHospital.Models.Patient>
 <div class="row">
-    <table>
+    <h2>Пациенты</h2>
+    <p>
+        @Html.ActionLink("Новый пациент", "CreatePatient", "Patient")
+    </p>
+    <table class="table">
+        <tr>
+            <td>ФИО</td>
+            <td>Номер карты</td>
+        </tr>
         @foreach (WebHospital.Models.Patient p in Model)
         {
-            <tr>
-                <td>@p.FIOPatient</td>
-                <td>@p.CardNumber</td>
-            </tr>
+        <tr>
+            <td>@p.FIOPatient</td>
+            <td>@p.CardNumber</td>
+            <td>@Html.ActionLink("Детали", "DetailsPatient", "Patient", new { id = p.IDPatient }, new { @class = "form-control" })</td>
+            <td>@Html.ActionLink("Редактировать", "EditPatient", "Patient", new { id = p.IDPatient }, new { @class = "form-control" })</td>
+            <td>@Html.ActionLink("Удалить", "DeleteConfirmedPatient", "Home", new { id = p.IDPatient }, new { @class = "form-control" })</td>
+        </tr>
         }
     </table>
+    <div>
+        @Html.Action("GetReceptions", "Reception", new { @class = "form-control"})
+    </div>
 </div>

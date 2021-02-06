@@ -1,0 +1,25 @@
+﻿@model WebHospital.Models.Employee
+
+<h2>Изменение данных о сотруднике</h2>
+@using (Html.BeginForm("EditEmployee", "Employee", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.IDEmpoyee)
+        <p>
+            @Html.LabelFor(m => m.FIOEmployee, "ФИО врача")
+            <br />
+            @Html.EditorFor(m => m.FIOEmployee)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Specialty, "Специализация")
+            <br />
+            @Html.DropDownListFor(m => m.Specialty, ViewBag.specialties as SelectList, new { @class = "form-control" })
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Cabinet, "Кабинет")
+            <br />
+            @Html.EditorFor(m => m.Cabinet)
+        </p>
+        <p><input type="submit" value="Сохранить" /></p>
+    </fieldset>
+}

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebHospital.Models.Reception>
+@{
+    Layout = null;
+}
+<p>
+    @Html.ActionLink("Новая запись на прием к врачу", "CreateReception", "Reception")
+</p>
+<table class="table">
+    <tr>
+        <td>ФИО врача</td>
+        <td>ФИО пациента</td>
+        <td>Дата и время приема</td>
+    </tr>
+    @foreach (WebHospital.Models.Reception r in Model)
+    {
+    <tr>
+        <td>@r.Employee1.FIOEmployee</td>
+        <td>@r.Patient1.FIOPatient</td>
+        <td>@r.Datetime</td>
+        <td>@Html.ActionLink("Редактировать", "EditReception", "Reception", new { id = r.IDReception }, new { @class = "form-control" })</td>
+        <td>@Html.ActionLink("Удалить", "DeleteConfirmedReception", "Reception", new { id = r.IDReception }, new { @class = "form-control" })</td>
+    </tr>
+    }
+</table>

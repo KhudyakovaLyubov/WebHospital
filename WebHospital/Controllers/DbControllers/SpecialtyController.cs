@@ -24,7 +24,7 @@ namespace WebHospital.Controllers.DbControllers
                 return HttpNotFound();
             }
             var specialty = context.Specialty.Find(id);
-            ViewBag.departments = new SelectList(context.Department, "NameDepartment", "IDDepartment");
+            ViewBag.departments = new SelectList(context.Department, "IDDepartment", "NameDepartment");
             if (specialty != null)
             {
                 return View(specialty);
@@ -43,7 +43,7 @@ namespace WebHospital.Controllers.DbControllers
         [HttpGet]
         public ActionResult CreateSpecialty()
         {
-            ViewBag.departments = new SelectList(context.Department, "NameDepartment", "IDDepartment");
+            ViewBag.departments = new SelectList(context.Department, "IDDepartment", "NameDepartment");
             return View();
         }
         [HttpPost]
@@ -52,6 +52,30 @@ namespace WebHospital.Controllers.DbControllers
             context.Specialty.Add(specialty);
             context.SaveChanges();
             return RedirectToAction("");
+        }
+
+        [HttpGet]
+        public ActionResult DeleteSpecialty(int id) //Удаление данных
+        {
+            var specialty = context.Specialty.Find(id);
+            if (specialty == null)
+            {
+                return HttpNotFound();
+            }
+            return View(specialty);
+        }
+
+        [HttpPost, ActionName("DeleteSpecialty")]
+        public ActionResult DeleteConfirmedSpecialty(int id) //Удаление записи из базы данных
+        {
+            var specialty = context.Specialty.Find(id);
+            if (specialty == null)
+            {
+                return HttpNotFound();
+            }
+            context.Specialty.Remove(specialty);
+            context.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных

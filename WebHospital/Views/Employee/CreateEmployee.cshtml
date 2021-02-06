@@ -1,0 +1,23 @@
+﻿@model WebHospital.Models.Employee
+
+<h2>Новый сотрудник</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.FIOEmployee, "ФИО врача")
+    <br />
+    <br />
+    @Html.EditorFor(model => model.FIOEmployee)
+    <br />
+    @Html.LabelFor(model => model.Specialty, "Отделение")
+    <br />
+    <br />
+    @Html.DropDownListFor(model => model.Specialty, ViewBag.specialties as SelectList, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(model => model.Cabinet, "Кабинет")
+    <br />
+    <br />
+    @Html.EditorFor(model => model.Cabinet)
+    <br />
+    <input type="submit" value="Добавить" />
+}
+

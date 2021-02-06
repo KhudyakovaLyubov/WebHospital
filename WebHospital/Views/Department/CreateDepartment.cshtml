@@ -1,0 +1,13 @@
+﻿@model WebHospital.Models.Department
+
+<h2>Новое отделение</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.NameDepartment, "Наименование отделения")
+    <br />
+    <br />
+    @Html.EditorFor(model => model.NameDepartment)
+    <br />
+    <input type="submit" value="Добавить" />
+}
+

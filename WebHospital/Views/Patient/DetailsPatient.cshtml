@@ -1,0 +1,25 @@
+﻿@model WebHospital.Models.Patient
+    
+<h2>Информация о пациенте</h2>
+<dl>
+    <dt>ФИО пациента</dt>
+    <dd>
+        @Html.DisplayFor(model => model.FIOPatient)
+    </dd>
+    <dt>Полис ОМС</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Policy)
+    </dd>
+    <dt>Дата рождения</dt>
+    <dd>
+        @Html.DisplayFor(model => model.DateOfBirth)
+    </dd>
+    <dt>Адрес</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Address)
+    </dd>
+    <dt>Номер карты</dt>
+    <dd>
+        @Html.DisplayFor(model => model.CardNumber)
+    </dd>
+</dl>

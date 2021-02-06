@@ -1,9 +1,17 @@
 ﻿@model WebHospital.Models.Specialty
+
+<h2>Новая специализация</h2>
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.NameSpecialty, "Специализация")
     <br />
+    <br />
     @Html.EditorFor(model => model.NameSpecialty)
+    <br />
+    @Html.LabelFor(model => model.Department, "Отделение")
+    <br />
+    <br />
+    @Html.DropDownListFor(model => model.Department, ViewBag.departments as SelectList, new { @class="form-control"})
     <br />
     <input type="submit" value="Добавить" />
 }
