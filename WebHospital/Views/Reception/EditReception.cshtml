@@ -16,9 +16,14 @@
             @Html.DropDownListFor(m => m.Patient, ViewBag.patients as SelectList, new { @class = "form-control" })
         </p>
         <p>
-            @Html.LabelFor(m=>m.Datetime)
-            <br/>
-            @Html.EditorFor(m=>m.Datetime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(m => m.LogInDate)
+            <br />
+            @Html.EditorFor(m => m.LogInDate, new { htmlAttributes = new { @class = "form-control" } })
+        </p>
+        <p>
+            @Html.LabelFor(m => m.LogInTime)
+            <br />
+            @Html.EditorFor(m => m.LogInTime, new { htmlAttributes = new { @class = "form-control" } })
         </p>
         <p><input type="submit" class="btn btn-primary value="Сохранить" /></p>
     </fieldset>

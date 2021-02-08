@@ -1,10 +1,8 @@
 namespace WebHospital.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Reception")]
     public partial class Reception
@@ -16,11 +14,9 @@ namespace WebHospital.Models
 
         public int Patient { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LogInDate { get; set; }
+        public DateTime? LogInDate { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LogInTime { get; set; }
+        public DateTime? LogInTime { get; set; }
 
         public virtual Employee Employee1 { get; set; }
 

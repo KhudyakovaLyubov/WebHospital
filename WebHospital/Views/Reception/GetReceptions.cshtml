@@ -9,14 +9,16 @@
     <tr>
         <td>ФИО врача</td>
         <td>ФИО пациента</td>
-        <td>Дата и время приема</td>
+        <td>Дата</td>
+        <td>Время</td>
     </tr>
     @foreach (WebHospital.Models.Reception r in Model)
     {
     <tr>
         <td>@r.Employee1.FIOEmployee</td>
         <td>@r.Patient1.FIOPatient</td>
-        <td>@r.Datetime</td>
+        <td>@r.LogInDate</td>
+        <td>@r.LogInTime</td>
         <td>@Html.ActionLink("Редактировать", "EditReception", "Reception", new { id = r.IDReception }, new { @class = "form-control" })</td>
         <td>@Html.ActionLink("Удалить", "DeleteConfirmedReception", "Reception", new { id = r.IDReception }, new { @class = "form-control" })</td>
     </tr>
