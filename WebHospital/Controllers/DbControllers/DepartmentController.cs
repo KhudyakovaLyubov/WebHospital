@@ -31,7 +31,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult CreatePatient()
+        public ActionResult CreateDepartment()
         {
             return View();
         }

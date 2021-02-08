@@ -6,8 +6,8 @@
     @Html.LabelFor(model => model.NameDepartment, "Наименование отделения")
     <br />
     <br />
-    @Html.EditorFor(model => model.NameDepartment)
+    @Html.EditorFor(model => model.NameDepartment, new { htmlAttributes = new { @class = "form-control" } })
     <br />
-    <input type="submit" value="Добавить" />
+    <input type="submit" class="btn btn-primary value="Добавить" />
 }
 

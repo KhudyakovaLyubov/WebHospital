@@ -6,12 +6,12 @@
     @Html.LabelFor(model => model.NameSpecialty, "Специализация")
     <br />
     <br />
-    @Html.EditorFor(model => model.NameSpecialty)
+    @Html.EditorFor(model => model.NameSpecialty, new { htmlAttributes = new { @class = "form-control" } })
     <br />
     @Html.LabelFor(model => model.Department, "Отделение")
     <br />
     <br />
     @Html.DropDownListFor(model => model.Department, ViewBag.departments as SelectList, new { @class="form-control"})
     <br />
-    <input type="submit" value="Добавить" />
+    <input type="submit" class="btn btn-primary value="Добавить" />
 }

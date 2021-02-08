@@ -6,27 +6,27 @@
     @Html.LabelFor(model => model.FIOPatient, "ФИО пациента")
     <br />
     <br />
-    @Html.EditorFor(model => model.FIOPatient)
+    @Html.EditorFor(model => model.FIOPatient, new { htmlAttributes = new { @class = "form-control" } })
     <br />
     @Html.LabelFor(model => model.Policy, "Полис ОМС")
     <br />
     <br />
-    @Html.EditorFor(model => model.Policy)
+    @Html.EditorFor(model => model.Policy, new { htmlAttributes = new { @class = "form-control" } })
     <br />
     @Html.LabelFor(model => model.DateOfBirth, "Дата рождения")
     <br />
     <br />
-    @Html.EditorFor(model => model.DateOfBirth)
+    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
     <br />
     @Html.LabelFor(model => model.Address, "Адрес")
     <br />
     <br />
-    @Html.EditorFor(model => model.Address)
+    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
     <br />
     @Html.LabelFor(model => model.CardNumber, "Номер медицинской карты")
     <br />
     <br />
-    @Html.EditorFor(model => model.CardNumber)
+    @Html.EditorFor(model => model.CardNumber, new { htmlAttributes = new { @class = "form-control" } })
     <br />
-    <input type="submit" value="Добавить" />
+    <input type="submit" class="btn btn-primary value="Добавить" />
 }

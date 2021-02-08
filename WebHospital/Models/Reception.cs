@@ -16,7 +16,11 @@ namespace WebHospital.Models
 
         public int Patient { get; set; }
 
-        public DateTime? Datetime { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime LogInDate { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime LogInTime { get; set; }
 
         public virtual Employee Employee1 { get; set; }
 

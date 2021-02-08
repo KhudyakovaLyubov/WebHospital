@@ -38,23 +38,10 @@ namespace WebHospital.Controllers
         {
             return View(context.Employee);
         }
-
-        public ActionResult Parts(int? id) // Фильтрация записей таблицы "Адреса" по полю "Участок"
+        
+        public ActionResult Structure()
         {
-            /*List<Address> addresses = context.Address.ToList();
-            List<Part> parts = context.Part.ToList();
-            List<DepartmentModel> partModel = parts
-                .Select(p => new DepartmentModel { Id = p.IDPart, Name = p.NamePart })
-                .ToList();
-            partModel.Insert(0, new DepartmentModel { Id = 0, Name = "Все" });
-            SpecialtyViewModel avm = new SpecialtyViewModel
-            {
-                PartList = partModel,
-                AddressList = addresses
-            };
-            if (id != null && id > 0)
-                avm.AddressList = addresses.Where(a => a.Part1.IDPart == id);*/
-            return View();
+            return View(context.Specialty);
         }
 
         [HttpPost, ActionName("Employees")]

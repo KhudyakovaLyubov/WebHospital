@@ -35,6 +35,7 @@ namespace WebHospital.Controllers.DbControllers
                 return HttpNotFound();
             }
             var employee = context.Employee.Find(id);
+            ViewBag.specialties = new SelectList(context.Specialty, "IDSpecialty", "NameSpecialty");
             if (employee != null)
             {
                 return View(employee);
@@ -53,6 +54,7 @@ namespace WebHospital.Controllers.DbControllers
         [HttpGet]
         public ActionResult CreateEmployee()
         {
+            ViewBag.specialties = new SelectList(context.Specialty, "IDSpecialty", "NameSpecialty");
             return View();
         }
         [HttpPost]

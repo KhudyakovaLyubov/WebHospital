@@ -8,7 +8,7 @@
         <p>
             @Html.LabelFor(m => m.FIOEmployee, "ФИО врача")
             <br />
-            @Html.EditorFor(m => m.FIOEmployee)
+            @Html.EditorFor(m => m.FIOEmployee, new { htmlAttributes = new { @class = "form-control" } })
         </p>
         <p>
             @Html.LabelFor(m => m.Specialty, "Специализация")
@@ -18,8 +18,8 @@
         <p>
             @Html.LabelFor(m => m.Cabinet, "Кабинет")
             <br />
-            @Html.EditorFor(m => m.Cabinet)
+            @Html.EditorFor(m => m.Cabinet, new { htmlAttributes = new { @class = "form-control" } })
         </p>
-        <p><input type="submit" value="Сохранить" /></p>
+        <p><input type="submit" class="btn btn-primary value="Сохранить" /></p>
     </fieldset>
 }

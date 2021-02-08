@@ -8,28 +8,28 @@
         <p>
             @Html.LabelFor(m => m.FIOPatient, "ФИО пациента")
             <br />
-            @Html.EditorFor(m => m.FIOPatient)
+            @Html.EditorFor(m => m.FIOPatient, new { htmlAttributes = new { @class = "form-control" } })
         </p>
         <p>
             @Html.LabelFor(m => m.Policy, "Полис ОМС")
             <br />
-            @Html.EditorFor(m => m.Policy)
+            @Html.EditorFor(m => m.Policy, new { htmlAttributes = new { @class = "form-control" } })
         </p>
         <p>
             @Html.LabelFor(m => m.DateOfBirth, "Дата рождения")
             <br />
-            @Html.EditorFor(m => m.DateOfBirth)
+            @Html.EditorFor(m => m.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
         </p>
         <p>
             @Html.LabelFor(m => m.Address, "Адрес")
             <br />
-            @Html.EditorFor(m => m.Address)
+            @Html.EditorFor(m => m.Address, new { htmlAttributes = new { @class = "form-control" } })
         </p>
         <p>
             @Html.LabelFor(m => m.CardNumber, "Номер карты")
             <br />
-            @Html.EditorFor(m => m.CardNumber)
+            @Html.EditorFor(m => m.CardNumber, new { htmlAttributes = new { @class = "form-control" } })
         </p>
-        <p><input type="submit" value="Сохранить" /></p>
+        <p><input type="submit" class="btn btn-primary value="Сохранить" /></p>
     </fieldset>
 }

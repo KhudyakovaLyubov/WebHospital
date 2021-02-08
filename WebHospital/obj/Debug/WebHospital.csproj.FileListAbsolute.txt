@@ -180,3 +180,4 @@ C:\Users\MoonLover\Documents\GitHub\WebHospital\WebHospital\obj\Debug\WebHospita
 C:\Users\MoonLover\Documents\GitHub\WebHospital\WebHospital\obj\Debug\WebHospital.csproj.CopyComplete
 C:\Users\MoonLover\Documents\GitHub\WebHospital\WebHospital\obj\Debug\WebHospital.dll
 C:\Users\MoonLover\Documents\GitHub\WebHospital\WebHospital\obj\Debug\WebHospital.pdb
+C:\Users\MoonLover\Documents\GitHub\WebHospital\WebHospital\bin\ru\EntityFramework.SqlServer.resources.dll

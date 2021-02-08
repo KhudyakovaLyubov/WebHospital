@@ -2,6 +2,7 @@
 @using WebHospital.ViewModel;
 
 <div class="row">
+
     <form class="form-inline">
         <label>Выберите отделение:</label>
         <select name="id" class="form-control">
@@ -10,7 +11,7 @@
                 <option value="@dm.Id">@dm.Name</option>
             }
         </select>
-        <input type="submit" value="Показать" />
+        <input type="submit" class="btn btn-primary" value="Показать" />
     </form>
     <br />
     <p>

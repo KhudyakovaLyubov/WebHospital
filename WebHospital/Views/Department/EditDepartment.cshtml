@@ -8,8 +8,8 @@
         <p>
             @Html.LabelFor(m => m.NameDepartment, "Наименование отделения")
             <br />
-            @Html.EditorFor(m => m.NameDepartment)
+            @Html.EditorFor(m => m.NameDepartment, new { htmlAttributes = new { @class = "form-control" } })
         </p>
-        <p><input type="submit" value="Сохранить" /></p>
+        <p><input type="submit" class="btn btn-primary value="Сохранить" /></p>
     </fieldset>
 }

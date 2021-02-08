@@ -6,7 +6,7 @@
     @Html.LabelFor(model => model.FIOEmployee, "ФИО врача")
     <br />
     <br />
-    @Html.EditorFor(model => model.FIOEmployee)
+    @Html.EditorFor(model => model.FIOEmployee, new { htmlAttributes = new { @class = "form-control" } })
     <br />
     @Html.LabelFor(model => model.Specialty, "Отделение")
     <br />
@@ -16,8 +16,8 @@
     @Html.LabelFor(model => model.Cabinet, "Кабинет")
     <br />
     <br />
-    @Html.EditorFor(model => model.Cabinet)
+    @Html.EditorFor(model => model.Cabinet, new { htmlAttributes = new { @class = "form-control" } })
     <br />
-    <input type="submit" value="Добавить" />
+    <input type="submit" class="btn btn-primary value="Добавить" />
 }
 
