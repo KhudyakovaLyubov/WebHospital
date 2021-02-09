@@ -1,9 +1,12 @@
 ﻿@model WebHospital.Models.Reception
-@{
+
+@{ 
     Layout = null;
 }
+
 <h2>Новый талон на прием</h2>
-<form>
+
+<form method="post" action="@Url.Action("CreateReception", "Reception")">
     @using (Html.BeginForm())
     {
         @Html.LabelFor(model => model.Employee, "Врач")
@@ -18,15 +21,16 @@
         <br />
         @Html.LabelFor(model => model.LogInDate, "Дата")
         <br />
-        @Html.EditorFor(model => model.LogInDate, new { htmlAttributes = new { @class = " dateTimePicker form-control" } })
+        @Html.EditorFor(model => model.LogInDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
         <br />
         <br />
         @Html.LabelFor(model => model.LogInTime, "Время")
         <br />
-        @Html.EditorFor(model => model.LogInTime, new { htmlAttributes = new { @class = " dateTimePicker form-control" } })
+        @Html.EditorFor(model => model.LogInTime, new { htmlAttributes = new { @class = "form-control", @type = "time" } })
         <br />
         <br />
-        <input type="submit" class="btn btn-primary value="Добавить" />
+        <input type="submit" class="btn btn-primary" value="Добавить" />
     }
 </form>
+
 

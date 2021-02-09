@@ -76,7 +76,7 @@ namespace WebHospital.Controllers.DbControllers
             return View(employee);
         }
 
-        [HttpPost, ActionName("DeleteEmpoyee")]
+        [HttpPost, ActionName("DeleteEmployee")]
         public ActionResult DeleteConfirmedEmployee(int id) //Удаление записи из базы данных
         {
             var employee = context.Employee.Find(id);

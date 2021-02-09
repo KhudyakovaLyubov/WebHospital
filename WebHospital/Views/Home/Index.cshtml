@@ -2,7 +2,7 @@
 @using WebHospital.ViewModel;
 
 <div class="row">
-
+    <br />
     <form class="form-inline">
         <label>Выберите отделение:</label>
         <select name="id" class="form-control">
@@ -21,16 +21,16 @@
     <table class="table">
         @foreach (Employee e in Model.EmployeeList)
         {
-        <tr>
-            <td>@e.FIOEmployee</td>
-            <td>@e.Specialty1.NameSpecialty</td>
-            <td>@Html.ActionLink("Детали", "DetailsEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
-            <td>@Html.ActionLink("Редактировать", "EditEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
-            <td>@Html.ActionLink("Удалить", "DeleteConfirmedEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
-        </tr>
+            <tr>
+                <td>@e.FIOEmployee</td>
+                <td>@e.Specialty1.NameSpecialty</td>
+                <td>@Html.ActionLink("Детали", "DetailsEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
+                <td>@Html.ActionLink("Редактировать", "EditEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
+                <td>@Html.ActionLink("Удалить", "DeleteConfirmedEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
+            </tr>
         }
     </table>
     <div id="recept">
-        @Html.Action("CreateReception", "Reception", new { @class="form-control"})
+        @Html.Action("CreateReception", "Reception", new { @class = "form-control" })
     </div>
 </div>

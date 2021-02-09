@@ -42,14 +42,15 @@ namespace WebHospital.Controllers.DbControllers
         {
             ViewBag.employees = new SelectList(context.Employee, "IDEmpoyee", "FIOEmployee"); //Выпадающий список сотрудников
             ViewBag.patients = new SelectList(context.Patient, "IDPatient", "FIOPatient"); //Выпадающий список пациентов
-            return View();
+            return PartialView();
         }
+
         [HttpPost]
         public ActionResult CreateReception(Reception reception) //Добавление записи в базу данных
         {
             context.Reception.Add(reception);
             context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Patients", "Home");
         }
 
         [HttpGet]

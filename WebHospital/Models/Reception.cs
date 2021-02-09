@@ -14,9 +14,10 @@ namespace WebHospital.Models
 
         public int Patient { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime? LogInDate { get; set; }
 
-        public DateTime? LogInTime { get; set; }
+        public TimeSpan? LogInTime { get; set; }
 
         public virtual Employee Employee1 { get; set; }
 

@@ -16,7 +16,7 @@
     @Html.LabelFor(model => model.DateOfBirth, "Дата рождения")
     <br />
     <br />
-    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
     <br />
     @Html.LabelFor(model => model.Address, "Адрес")
     <br />
