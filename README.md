@@ -16,8 +16,6 @@ The project was developed according to the technical task on the topic automated
 * EntityFramework
 * JQuery, JQuery.UI.Combined
 
-## Steps for installation, assembly, commissioning
-
 ## Documentation
 
 * [Metanit.com](https://metanit.com/sharp/mvc5/) - ASP.NET MVC C#
