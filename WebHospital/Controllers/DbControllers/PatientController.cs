@@ -6,10 +6,10 @@ namespace WebHospital.Controllers.DbControllers
 {
     public class PatientController : Controller //Работа с данными таблицы "Пациенты"
     {
-        HospitalDbContext context = new HospitalDbContext();
+        HospitalDbContext context = new HospitalDbContext(); //контекст данных
 
         [HttpGet]
-        public ActionResult DetailsPatient(int id)
+        public ActionResult DetailsPatient(int id) //Форма просмотра данных по определенной записи
         {
             var patient = context.Patient.Find(id);
             if (patient != null)
@@ -20,7 +20,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult EditPatient(int? id) //Редактирование данных
+        public ActionResult EditPatient(int? id) //Переход на форму изменения записи
         {
             if (id == null)
             {
@@ -43,7 +43,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult CreatePatient()
+        public ActionResult CreatePatient() //Переход на форму добавления новой записи
         {
             return View();
         }
@@ -57,7 +57,7 @@ namespace WebHospital.Controllers.DbControllers
 
 
         [HttpGet]
-        public ActionResult DeletePatient(int id) //Удаление данных
+        public ActionResult DeletePatient(int id) //Переход на форму удаления записи
         {
             var patient = context.Patient.Find(id);
             if (patient == null)

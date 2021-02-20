@@ -13,7 +13,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult EditReception(int? id) //Редактирование данных
+        public ActionResult EditReception(int? id) //Переход на форму изменения записи
         {
             if (id == null)
             {
@@ -38,7 +38,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult CreateReception()
+        public ActionResult CreateReception() //Переход на форму добавления записи
         {
             ViewBag.employees = new SelectList(context.Employee, "IDEmpoyee", "FIOEmployee"); //Выпадающий список сотрудников
             ViewBag.patients = new SelectList(context.Patient, "IDPatient", "FIOPatient"); //Выпадающий список пациентов
@@ -54,7 +54,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult DeleteReception(int id) //Удаление данных
+        public ActionResult DeleteReception(int id) // Переход на форму удаления записи
         {
             var reception = context.Reception.Find(id);
             if (reception == null)
@@ -74,7 +74,7 @@ namespace WebHospital.Controllers.DbControllers
             }
             context.Reception.Remove(reception);
             context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Patients", "Home");
         }
 
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных

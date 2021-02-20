@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebHospital.Models.Specialty>
+﻿@model IEnumerable<WebHospital.Models.Department>
 <div class="row">
     <div id="departments">
         <h2>Отделения</h2>
@@ -6,30 +6,17 @@
             @Html.ActionLink("Новое отделение", "CreateDepartment", "Department")
         </p>
         <table class="table">
-            @foreach (WebHospital.Models.Specialty s in Model)
+            @foreach(WebHospital.Models.Department d in Model)
             {
                 <tr>
-                    <td>@s.Department1.NameDepartment</td>
-                    <td>@Html.ActionLink("Редактировать", "EditDepartment", "Department", new { id = s.Department1.IDDepartment }, new { @class = "form-control" })</td>
-                    <td>@Html.ActionLink("Удалить", "DeleteConfirmedDepartment", "Home", new { id = s.Department1.IDDepartment }, new { @class = "form-control" })</td>
+                    <td>@d.NameDepartment</td>
+                    <td>@Html.ActionLink("Редактировать", "EditDepartment", "Department", new { id = d.IDDepartment }, new { @class = "form-control" })</td>
+                    <td>@Html.ActionLink("Удалить", "DeleteDepartment", "Department", new { id = d.IDDepartment }, new { @class = "form-control" })</td>
                 </tr>
             }
         </table>
     </div>
     <div id="specialties">
-        <h2>Специализации</h2>
-        <p>
-            @Html.ActionLink("Добавить специализацию", "CreateSpecialty", "Specialty")
-        </p>
-        <table class="table">
-            @foreach (WebHospital.Models.Specialty s in Model)
-            {
-                <tr>
-                    <td>@s.NameSpecialty</td>
-                    <td>@Html.ActionLink("Редактировать", "EditSpeciaty", "Specialty", new { id = s.IDSpecialty }, new { @class = "form-control" })</td>
-                    <td>@Html.ActionLink("Удалить", "DeleteConfirmedSpecialty", "Home", new { id = s.IDSpecialty }, new { @class = "form-control" })</td>
-                </tr>
-            }
-        </table>
+        @Html.Action("GetSpecialties", "Specialty", new { @class = "form-control" })
     </div>
 </div>

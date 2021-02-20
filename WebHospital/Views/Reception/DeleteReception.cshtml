@@ -10,12 +10,16 @@
     <dd>
         @Html.DisplayFor(model => model.Patient1.FIOPatient)
     </dd>
-    <dt>Дата и время приема</dt>
+    <dt>Дата приема</dt>
     <dd>
-        @Html.DisplayFor(model => model.Datetime)
+        @Html.DisplayFor(model => model.LogInDate)
+    </dd>
+    <dt>Время приема</dt>
+    <dd>
+        @Html.DisplayFor(model => model.LogInTime)
     </dd>
 </dl>
 @using (Html.BeginForm())
 {
-    <input type="submit" class="btn btn-primary value="Удалить" />
+    <input type="submit" class="btn btn-primary" value="Удалить" />
 }

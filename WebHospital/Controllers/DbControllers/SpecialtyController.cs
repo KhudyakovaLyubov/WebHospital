@@ -8,16 +8,13 @@ namespace WebHospital.Controllers.DbControllers
     {
         HospitalDbContext context = new HospitalDbContext(); //Контекст данных, связи между таблицами
         // GET: Specialty
-        public ActionResult GetSpecialties(int? id) //Все записи по фильтру и без
+        public ActionResult GetSpecialties() //Все записи 
         {
-            var departments = context.Department.Find(id);
-            IQueryable<Specialty> specialties = context.Specialty;
-            specialties = specialties.Where(s => s.Department == departments.IDDepartment);
-            return View(specialties);
+            return PartialView(context.Specialty);
         }
 
         [HttpGet]
-        public ActionResult EditSpecialty(int? id) //Редактирование данных
+        public ActionResult EditSpecialty(int? id) //Переход на форму изменения записи
         {
             if (id == null)
             {
@@ -37,11 +34,11 @@ namespace WebHospital.Controllers.DbControllers
         {
             context.Entry(specialty).State = System.Data.Entity.EntityState.Modified;
             context.SaveChanges();
-            return RedirectToAction("");
+            return RedirectToAction("Structure", "Home");
         }
 
         [HttpGet]
-        public ActionResult CreateSpecialty()
+        public ActionResult CreateSpecialty() //Переход на форму добавления новой записи
         {
             ViewBag.departments = new SelectList(context.Department, "IDDepartment", "NameDepartment");
             return View();
@@ -51,7 +48,7 @@ namespace WebHospital.Controllers.DbControllers
         {
             context.Specialty.Add(specialty);
             context.SaveChanges();
-            return RedirectToAction("");
+            return RedirectToAction("Structure", "Home");
         }
 
         [HttpGet]
@@ -75,7 +72,7 @@ namespace WebHospital.Controllers.DbControllers
             }
             context.Specialty.Remove(specialty);
             context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Structure", "Home");
         }
 
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WebHospital.Models;
 using WebHospital.ViewModel;
@@ -11,7 +9,7 @@ namespace WebHospital.Controllers
     public class HomeController : Controller
     {
         HospitalDbContext context = new HospitalDbContext();
-        public ActionResult Index(int? id) //Главная страница, отображение отделений, поиск врача
+        public ActionResult Index(int? id) //Главная страница, список врачей по выбору отделения
         {
             List<Employee> employees = context.Employee.ToList();
             List<Department> departments = context.Department.ToList();
@@ -39,9 +37,9 @@ namespace WebHospital.Controllers
             return View(context.Employee);
         }
         
-        public ActionResult Structure()
+        public ActionResult Structure() //Отображение всех отделений и специализаций
         {
-            return View(context.Specialty);
+            return View(context.Department);
         }
 
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных

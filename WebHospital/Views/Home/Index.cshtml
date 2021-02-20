@@ -26,7 +26,7 @@
                 <td>@e.Specialty1.NameSpecialty</td>
                 <td>@Html.ActionLink("Детали", "DetailsEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
                 <td>@Html.ActionLink("Редактировать", "EditEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
-                <td>@Html.ActionLink("Удалить", "DeleteConfirmedEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
+                <td>@Html.ActionLink("Удалить", "DeleteEmployee", "Employee", new { id = e.IDEmpoyee }, new { @class = "form-control" })</td>
             </tr>
         }
     </table>

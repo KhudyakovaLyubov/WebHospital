@@ -1,18 +1,15 @@
 ﻿@model IEnumerable<WebHospital.Models.Specialty>
-@{
-    Layout = null;
-}
 <p>
     @Html.ActionLink("Добавить специализацию", "CreateSpecialty", "Specialty")
 </p>
+<h2>Специализации</h2>
 <table class="table">
-    @foreach (WebHospital.Models.Specialty e in Model)
+    @foreach (WebHospital.Models.Specialty s in Model)
     {
         <tr>
-            <td scope="row">@e.NameSpecialty</td>
-        </tr>
-        <tr>
-            @Html.Action("GetEmployees", "Employee", new { id = e.IDSpecialty })
+            <td>@s.NameSpecialty</td>
+            <td>@Html.ActionLink("Редактировать", "EditSpecialty", "Specialty", new { id = s.IDSpecialty }, new { @class = "form-control" })</td>
+            <td>@Html.ActionLink("Удалить", "DeleteSpecialty", "Specialty", new { id = s.IDSpecialty }, new { @class = "form-control" })</td>
         </tr>
     }
 </table>

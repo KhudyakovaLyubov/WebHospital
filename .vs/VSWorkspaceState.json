@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\packages",
-    "\\WebHospital"
+    "\\WebHospital",
+    "\\WebHospital\\Controllers",
+    "\\WebHospital\\Views",
+    "\\WebHospital\\Views\\Home"
   ],
+  "SelectedNode": "\\WebHospital.sln",
   "PreviewInSolutionExplorer": false
 }

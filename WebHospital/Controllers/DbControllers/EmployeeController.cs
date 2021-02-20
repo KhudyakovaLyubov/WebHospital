@@ -9,7 +9,7 @@ namespace WebHospital.Controllers.DbControllers
         HospitalDbContext context = new HospitalDbContext();
 
         [HttpGet]
-        public ActionResult DetailsEmployee(int id)
+        public ActionResult DetailsEmployee(int id) //Форма просмотра данных по определенной записи
         {
             var employee = context.Employee.Find(id);
             if (employee != null)
@@ -19,7 +19,7 @@ namespace WebHospital.Controllers.DbControllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult GetEmployees(int? id)
+        public ActionResult GetEmployees(int? id) //Список врачей по специализации
         {
             var specialties = context.Specialty.Find(id);
             IQueryable<Employee> employees = context.Employee;
@@ -28,7 +28,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult EditEmployee(int? id) //Редактирование данных
+        public ActionResult EditEmployee(int? id) //Переход на форму изменения записи
         {
             if (id == null)
             {
@@ -52,7 +52,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult CreateEmployee()
+        public ActionResult CreateEmployee() //Переход на форму добавления новой записи
         {
             ViewBag.specialties = new SelectList(context.Specialty, "IDSpecialty", "NameSpecialty");
             return View();
@@ -66,7 +66,7 @@ namespace WebHospital.Controllers.DbControllers
         }
 
         [HttpGet]
-        public ActionResult DeleteEmployee(int id) //Удаление данных
+        public ActionResult DeleteEmployee(int id) //Переход на форму удаления записи
         {
             var employee = context.Employee.Find(id);
             if (employee == null)

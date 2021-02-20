@@ -40,7 +40,7 @@ namespace WebHospital.Controllers.DbControllers
         {
             context.Department.Add(department);
             context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Structure", "Home");
         }
 
         [HttpGet]
@@ -64,7 +64,7 @@ namespace WebHospital.Controllers.DbControllers
             }
             context.Department.Remove(department);
             context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Structure", "Home");
         }
 
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных

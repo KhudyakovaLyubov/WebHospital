@@ -16,7 +16,7 @@
             <td>@p.CardNumber</td>
             <td>@Html.ActionLink("Детали", "DetailsPatient", "Patient", new { id = p.IDPatient }, new { @class = "form-control" })</td>
             <td>@Html.ActionLink("Редактировать", "EditPatient", "Patient", new { id = p.IDPatient }, new { @class = "form-control" })</td>
-            <td>@Html.ActionLink("Удалить", "DeleteConfirmedPatient", "Home", new { id = p.IDPatient }, new { @class = "form-control" })</td>
+            <td>@Html.ActionLink("Удалить", "DeletePatient", "Home", new { id = p.IDPatient }, new { @class = "form-control" })</td>
         </tr>
         }
     </table>
