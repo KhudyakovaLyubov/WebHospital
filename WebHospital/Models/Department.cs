@@ -16,6 +16,7 @@ namespace WebHospital.Models
         [Key]
         public int IDDepartment { get; set; }
 
+        [Required(ErrorMessage = "Введите название отделения")]
         [StringLength(50)]
         public string NameDepartment { get; set; }
 

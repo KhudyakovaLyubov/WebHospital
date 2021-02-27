@@ -9,11 +9,13 @@
             @Html.LabelFor(m => m.NameSpecialty, "Наименование специализации")
             <br />
             @Html.EditorFor(m => m.NameSpecialty, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.NameSpecialty, null, new { @class = "text-danger" })
         </p>
         <p>
             @Html.LabelFor(m => m.Department, "Наименование отделения")
             <br />
             @Html.DropDownListFor(m => m.Department, ViewBag.departments as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Department, null, new { @class = "text-danger" })
         </p>
         <p><input type="submit" class="btn btn-primary" value="Сохранить" /></p>
     </fieldset>

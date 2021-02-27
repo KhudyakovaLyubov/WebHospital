@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using WebHospital.Models;
 
 
@@ -75,9 +76,25 @@ namespace WebHospital.Controllers.DbControllers
             {
                 return HttpNotFound();
             }
+            int count = PatientsCount(id);
+            if(count != 0)
+            {
+                ViewBag.Message = "Невозможно удалить пациента! Возможное решение: 1. Удалить запись к врачу от данного пациента; 2. Изменить пациента в записи к врачу.";
+                return View(patient);
+            }
             context.Patient.Remove(patient);
             context.SaveChanges();
             return RedirectToAction("Patients", "Home");
+        }
+
+        private int PatientsCount(int id) //Количество записей в связанной таблице по идентификатору главной таблицы
+        {
+            int count = 0;
+            var patients = context.Patient.Find(id);
+            IQueryable<Reception> receptions = context.Reception;
+            receptions = receptions.Where(s => s.Patient == patients.IDPatient);
+            count = receptions.Count();
+            return count;
         }
 
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных

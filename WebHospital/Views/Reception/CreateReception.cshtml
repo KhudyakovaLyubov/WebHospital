@@ -12,21 +12,25 @@
         @Html.LabelFor(model => model.Employee, "Врач")
         <br />
         @Html.DropDownListFor(model => model.Employee, ViewBag.employees as SelectList, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Employee, null, new { @class = "text-danger" })
         <br />
         <br />
         @Html.LabelFor(model => model.Patient, "Пациент")
         <br />
         @Html.DropDownListFor(model => model.Patient, ViewBag.patients as SelectList, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Patient, null, new { @class = "text-danger" })
         <br />
         <br />
         @Html.LabelFor(model => model.LogInDate, "Дата")
         <br />
         @Html.EditorFor(model => model.LogInDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+        @Html.ValidationMessageFor(model => model.LogInDate, null, new { @class = "text-danger" })
         <br />
         <br />
         @Html.LabelFor(model => model.LogInTime, "Время")
         <br />
         @Html.EditorFor(model => model.LogInTime, new { htmlAttributes = new { @class = "form-control", @type = "time" } })
+        @Html.ValidationMessageFor(model => model.LogInTime, null, new { @class = "text-danger" })
         <br />
         <br />
         <input type="submit" class="btn btn-primary" value="Добавить" />

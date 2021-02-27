@@ -9,6 +9,7 @@
             @Html.LabelFor(m => m.NameDepartment, "Наименование отделения")
             <br />
             @Html.EditorFor(m => m.NameDepartment, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.NameDepartment, null, new { @class = "text-danger" })
         </p>
         <p><input type="submit" class="btn btn-primary" value="Сохранить" /></p>
     </fieldset>

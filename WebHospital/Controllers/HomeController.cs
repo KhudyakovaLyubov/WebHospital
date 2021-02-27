@@ -11,8 +11,8 @@ namespace WebHospital.Controllers
         HospitalDbContext context = new HospitalDbContext();
         public ActionResult Index(int? id) //Главная страница, список врачей по выбору отделения
         {
-            List<Employee> employees = context.Employee.ToList();
-            List<Department> departments = context.Department.ToList();
+            List<Employee> employees = context.Employee.ToList(); //Список сотрудников
+            List<Department> departments = context.Department.ToList(); //Список отделений
             List<DepartmentModel> departModel = departments
                 .Select(d => new DepartmentModel { Id = d.IDDepartment, Name = d.NameDepartment })
                 .ToList();

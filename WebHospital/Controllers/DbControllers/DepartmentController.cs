@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using System.Linq;
 using WebHospital.Models;
 
 namespace WebHospital.Controllers.DbControllers
@@ -62,9 +64,25 @@ namespace WebHospital.Controllers.DbControllers
             {
                 return HttpNotFound();
             }
+            int countRecord = SpecialtiesCount(id);
+            if(countRecord != 0)
+            {
+                ViewBag.Message = "Невозможно удалить отделение! Возможное решение: 1. Удалить специализации в данном отделении; 2. Поменять отделение у специализаций, которые относятся к данному отделению.";
+                return View(department);
+            }
             context.Department.Remove(department);
             context.SaveChanges();
             return RedirectToAction("Structure", "Home");
+        }
+
+        private int SpecialtiesCount(int id) //Количество записей в связанной таблице по идентификатору главной таблицы
+        {
+            int count = 0;
+            var departments = context.Department.Find(id);
+            IQueryable<Specialty> specialties = context.Specialty;
+            specialties = specialties.Where(s => s.Department == departments.IDDepartment);
+            count = specialties.Count();
+            return count;
         }
 
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных

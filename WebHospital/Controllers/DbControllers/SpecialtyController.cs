@@ -70,11 +70,26 @@ namespace WebHospital.Controllers.DbControllers
             {
                 return HttpNotFound();
             }
+            int count = EmployeesCount(id);
+            if(count != 0)
+            {
+                ViewBag.Message = "Невозможно удалить специализацию! Возможное решение: 1. Удалить врачей по данной специализации; 2. Поменять специализацию у врачей, которые относятся к данной специализации.";
+                return View(specialty);
+            }
             context.Specialty.Remove(specialty);
             context.SaveChanges();
             return RedirectToAction("Structure", "Home");
         }
 
+        private int EmployeesCount(int id) //Количество записей в связанной таблице по идентификатору главной таблицы
+        {
+            int count = 0;
+            var specialties = context.Specialty.Find(id);
+            IQueryable<Employee> employees = context.Employee;
+            employees = employees.Where(s => s.Specialty == specialties.IDSpecialty);
+            count = employees.Count();
+            return count;
+        }
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных
         {
             context.Dispose();

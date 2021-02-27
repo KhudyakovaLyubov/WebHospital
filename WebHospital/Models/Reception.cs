@@ -10,13 +10,18 @@ namespace WebHospital.Models
         [Key]
         public int IDReception { get; set; }
 
+        [Required(ErrorMessage = "Выберите врача")]
         public int Employee { get; set; }
 
+        [Required(ErrorMessage = "Выберите пациента")]
         public int Patient { get; set; }
 
-        [Column(TypeName = "date")]
+        
+        [Required(ErrorMessage = "Выберите дату")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? LogInDate { get; set; }
 
+        [Required(ErrorMessage = "Выберите время")]
         public TimeSpan? LogInTime { get; set; }
 
         public virtual Employee Employee1 { get; set; }

@@ -18,11 +18,14 @@ namespace WebHospital.Models
         [Key]
         public int IDEmpoyee { get; set; }
 
+        [Required(ErrorMessage = "Введите ФИО врача")]
         [StringLength(50)]
         public string FIOEmployee { get; set; }
 
+        [Required(ErrorMessage = "Выберите специализацию врача")]
         public int Specialty { get; set; }
 
+        [Required(ErrorMessage = "Укажите номер кабинета")]
         public int? Cabinet { get; set; }
 
         public int? Part { get; set; }

@@ -9,27 +9,32 @@
             @Html.LabelFor(m => m.FIOPatient, "ФИО пациента")
             <br />
             @Html.EditorFor(m => m.FIOPatient, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m=>m.FIOPatient, null, new { @class = "text-danger" })
         </p>
         <p>
             @Html.LabelFor(m => m.Policy, "Полис ОМС")
             <br />
             @Html.EditorFor(m => m.Policy, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Policy, null, new { @class = "text-danger" })
         </p>
         <p>
             @Html.LabelFor(m => m.DateOfBirth, "Дата рождения")
             <br />
             @Html.EditorFor(m => m.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.DateOfBirth, null, new { @class = "text-danger" })
         </p>
         <p>
             @Html.LabelFor(m => m.Address, "Адрес")
             <br />
             @Html.EditorFor(m => m.Address, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Address, null, new { @class = "text-danger" })
         </p>
         <p>
             @Html.LabelFor(m => m.CardNumber, "Номер карты")
             <br />
             @Html.EditorFor(m => m.CardNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.CardNumber, null, new { @class = "text-danger" })
         </p>
-        <p><input type="submit" class="btn btn-primary value="Сохранить" /></p>
+        <p><input type="submit" class="btn btn-primary" value="Сохранить" /></p>
     </fieldset>
 }

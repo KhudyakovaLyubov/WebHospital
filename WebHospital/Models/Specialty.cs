@@ -18,9 +18,11 @@ namespace WebHospital.Models
         [Key]
         public int IDSpecialty { get; set; }
 
+        [Required(ErrorMessage = "Введите название специализации")]
         [StringLength(50)]
         public string NameSpecialty { get; set; }
 
+        [Required(ErrorMessage = "Выберите отделение")]
         public int Department { get; set; }
 
         public virtual Department Department1 { get; set; }

@@ -9,21 +9,25 @@
             @Html.LabelFor(m => m.Employee, "Врач")
             <br />
             @Html.DropDownListFor(m => m.Employee, ViewBag.employees as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.Employee, null, new { @class = "text-danger" })
         </p>
         <p>
             @Html.LabelFor(m => m.Patient, "Пациент")
             <br />
             @Html.DropDownListFor(m => m.Patient, ViewBag.patients as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.Patient, null, new { @class = "text-danger" })
         </p>
         <p>
-            @Html.LabelFor(m => m.LogInDate)
+            @Html.LabelFor(m => m.LogInDate, "Дата")
             <br />
             @Html.EditorFor(m => m.LogInDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m=>m.LogInDate, null, new { @class = "text-danger" })
         </p>
         <p>
-            @Html.LabelFor(m => m.LogInTime)
+            @Html.LabelFor(m => m.LogInTime, "Время")
             <br />
             @Html.EditorFor(m => m.LogInTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m=>m.LogInTime, null, new { @class = "text-danger" })
         </p>
         <p><input type="submit" class="btn btn-primary" value="Сохранить" /></p>
     </fieldset>

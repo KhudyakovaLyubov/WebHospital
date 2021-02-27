@@ -9,17 +9,20 @@
             @Html.LabelFor(m => m.FIOEmployee, "ФИО врача")
             <br />
             @Html.EditorFor(m => m.FIOEmployee, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.FIOEmployee, null, new { @class = "text-danger" })
         </p>
         <p>
             @Html.LabelFor(m => m.Specialty, "Специализация")
             <br />
             @Html.DropDownListFor(m => m.Specialty, ViewBag.specialties as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Specialty, null, new { @class = "text-danger" })
         </p>
         <p>
             @Html.LabelFor(m => m.Cabinet, "Кабинет")
             <br />
             @Html.EditorFor(m => m.Cabinet, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Cabinet, null, new { @class = "text-danger" })
         </p>
-        <p><input type="submit" class="btn btn-primary value="Сохранить" /></p>
+        <p><input type="submit" class="btn btn-primary" value="Сохранить" /></p>
     </fieldset>
 }

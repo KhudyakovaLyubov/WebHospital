@@ -84,9 +84,25 @@ namespace WebHospital.Controllers.DbControllers
             {
                 return HttpNotFound();
             }
+            int count = ReceptionCount(id);
+            if(count != 0)
+            {
+                ViewBag.Message = "Невозможно удалить врача! Возможное решение: 1. Удалить записи на прием к данному врачу; 2. Поменять врача в записи на прием.";
+                return View(employee);
+            }
             context.Employee.Remove(employee);
             context.SaveChanges();
             return RedirectToAction("Employees", "Home");
+        }
+
+        private int ReceptionCount(int id) //Количество записей в связанной таблице по идентификатору главной таблицы
+        {
+            int count = 0;
+            var employees = context.Employee.Find(id);
+            IQueryable<Reception> receptions = context.Reception;
+            receptions = receptions.Where(s => s.Employee == employees.IDEmpoyee);
+            count = receptions.Count();
+            return count;
         }
 
         protected override void Dispose(bool disposing) //Закрытие соединения с контекстом данных

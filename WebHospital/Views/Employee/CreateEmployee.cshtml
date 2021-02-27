@@ -7,17 +7,20 @@
     <br />
     <br />
     @Html.EditorFor(model => model.FIOEmployee, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.FIOEmployee, null, new { @class = "text-danger" })
     <br />
     @Html.LabelFor(model => model.Specialty, "Отделение")
     <br />
     <br />
     @Html.DropDownListFor(model => model.Specialty, ViewBag.specialties as SelectList, new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.Specialty, null, new { @class = "text-danger" })
     <br />
     @Html.LabelFor(model => model.Cabinet, "Кабинет")
     <br />
     <br />
     @Html.EditorFor(model => model.Cabinet, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.Cabinet, null, new { @class = "text-danger" })
     <br />
-    <input type="submit" class="btn btn-primary value="Добавить" />
+    <input type="submit" class="btn btn-primary" value="Добавить" />
 }
 

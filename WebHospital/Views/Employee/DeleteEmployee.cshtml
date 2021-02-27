@@ -1,6 +1,7 @@
 ﻿@model WebHospital.Models.Employee
 
 <h2>Удалить сотрудника</h2>
+@ViewBag.Message
 <dl>
     <dt>ФИО сотрудника</dt>
     <dd>
@@ -17,5 +18,5 @@
 </dl>
 @using (Html.BeginForm())
 {
-    <input type="submit" class="btn btn-primary value="Удалить" />
+    <input type="submit" class="btn btn-primary" value="Удалить" />
 }
